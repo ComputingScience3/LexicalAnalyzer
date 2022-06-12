@@ -62,6 +62,15 @@ public class WordList {
         list.add(new Token("PRIMARY","AGREGADOS"));
         list.add(new Token("FOREIGN","AGREGADOS"));
         
+        //IDENTIFICADORES
+        list.add(new Token("COLUMN","IDENTIFICADORES"));
+        list.add(new Token("TABLE","IDENTIFICADORES"));
+        list.add(new Token("DATABASE","IDENTIFICADORES"));
+        list.add(new Token("KEY","IDENTIFICADORES"));
+        list.add(new Token("INDEX","IDENTIFICADORES"));
+        list.add(new Token("CONSTRAINT","IDENTIFICADORES"));
+        list.add(new Token("VIEW","IDENTIFICADORES"));
+        
         //OPERADORES
         list.add(new Token("AND","OPERADORES"));
         list.add(new Token("OR","OPERADORES"));
@@ -95,6 +104,24 @@ public class WordList {
             }
         }
         return false;
+    }
+    
+    public String getWord(String word){
+        for(Token k:list){
+            if(word.equalsIgnoreCase(k.word)){
+                return k.word;
+            }
+        }
+        return "";
+    }
+
+    public String getType(String word){
+        for(Token k:list){
+            if(word.equalsIgnoreCase(k.word)){
+                return k.type;
+            }
+        }
+        return "";
     }
     
 }

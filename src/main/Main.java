@@ -16,7 +16,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LexicalAnalyzer analyzer = new LexicalAnalyzer();
-        System.out.println(analyzer.lexicalCheck(sc.nextLine()));
+        System.out.print("Ingrese la sentencia:");
+        System.out.println(analyzer.wordsContained(sc.nextLine()));
     }
     
 }

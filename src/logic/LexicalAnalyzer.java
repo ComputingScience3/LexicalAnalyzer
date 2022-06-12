@@ -19,11 +19,27 @@ public class LexicalAnalyzer {
     public boolean lexicalCheck(String wordsToCheck){
         String[] words = wordsToCheck.split(" ");
         for(String w:words){
-            if(!wordList.Contains(w)){
+            if(wordList.Contains(w)){
                 return false;
             }
         }
         return true;
+    }
+    
+    public String wordsContained(String wordsToCheck){
+        String result = "";
+        String[] words = wordsToCheck.split(" ");
+        int cont = 0;
+        for(String w:words){
+            if(wordList.Contains(w)){
+                result += wordList.getWord(w)+": "+wordList.getType(w)+"\n";
+                cont++;
+            }
+        }
+        if(cont != words.length){
+            result = "SENTENCIA INVALIDA";
+        }
+        return result;
     }
     
 }
